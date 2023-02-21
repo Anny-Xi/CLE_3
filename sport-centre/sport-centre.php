@@ -28,33 +28,33 @@
             </div>
 
             <div class="slide">
-                <a class="slide-link" href="soccer.php">
+                <a class="slide-link" href="fitness.php">
                 <img class="slide-img" alt="Fitness" src="photo-sport-centre/dumbbell_PNG16378.png">
                 Fitness</a>
 
             </div>
 
             <div class="slide">
-                <a class="slide-link" href="soccer.php">
+                <a class="slide-link" href="bowling.php">
                 <img class="slide-img" alt="Bowling" src="photo-sport-centre/bowling-pin.png">
                 Bowlen</a>
             </div>
 
             <div class="slide">
-                <a class="slide-link" href="soccer.php">
+                <a class="slide-link" href="tennis.php">
                 <img class="slide-img" alt="tennis" src="photo-sport-centre/tennis-racket.jpg">
                 Tennis</a>
             </div>
 
             <div class="slide">
-                <a class="slide-link" href="soccer.php">
+                <a class="slide-link" href="basketball.php">
                 <img class="slide-img" alt="Basketball" src="photo-sport-centre/basketball.png">
                 Basketbal</a>
             </div>
 
             <div class="slide">
-                <a class="slide-link" href="soccer.php">
-                <img class="slide-img" alt="Swimming" src="photo-sport-centre/swimming.png">
+                <a class="slide-link" href="swimming.php">
+                <img class="slide-img" alt="Swimming" src="photo-sport-centre/swimming-goggles-png-4.jpg">
                 Zwemmen</a>
             </div>
         </section>
