@@ -2,27 +2,40 @@ body {
     margin: 0;
 }
 
+main {
+    padding-left: 17.5vw;
+}
+
 .slides {
     display: inline-grid;
     grid-template-columns: auto auto auto;
-    column-count: 3;
 }
 
 .slide {
-    width: 20vw;
-    height: 30vh;
+    width: 25vw;
+    height: 35vh;
     margin: 0;
 }
 
 .slide-img {
-    display: block;
     max-height: 20vh;
     max-width: 15vw;
+    padding-left: 1vw;
 }
 
 .slide-link {
-    align-content: center;
+    align-items: center;
     text-decoration: none;
     color: black;
+}
+
+.bowling {
+    padding-right: 2vw;
+}
+
+h2 {
+    text-decoration: none;
+    color: black;
+    padding-left: 4vw;
     font-size: 1.2em;
 }
