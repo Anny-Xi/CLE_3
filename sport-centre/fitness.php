@@ -18,6 +18,7 @@
             </div>
 
             <div class="sport-text-box">
+                <h2> Fitness</h2>
                 <span class="sport-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae elementum. </span>
             </div>
         </section>
