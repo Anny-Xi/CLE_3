@@ -1,57 +1,59 @@
-body {
-    margin: 0;
-}
+/*Body parts*/
 
-main {
-    padding-left: 24.5vw;
-}
+    body {
+        margin: 0;
+    }
 
-.slides {
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-}
+    main {
+        padding-left: 24.5vw;
+    }
+/* Main*/
+    .slides {
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+    }
 
-.slide {
-    width: 20vw;
-    height: 20vh;
-    margin-bottom: 10vh;
-}
+    .slide {
+        width: 20vw;
+        height: 20vh;
+        margin-bottom: 10vh;
+    }
 
-.slide-img {
-    max-height: 20vh;
-    max-width: 15vw;
-    padding-left: 1vw;
-}
+    .slide-img {
+        max-height: 20vh;
+        max-width: 15vw;
+        padding-left: 1vw;
+    }
 
-.slide-link {
-    align-items: center;
-    text-decoration: none;
-    color: black;
-}
+    .slide-link {
+        align-items: center;
+        text-decoration: none;
+        color: black;
+    }
 
-.soccer {
-    padding-left: 3.5vw;
-}
+    .soccer {
+        padding-left: 3.5vw;
+    }
 
-.tennis {
-    padding-left: 4vw;
-}
-
-
-.fitness-text {
-    align-content: center;
-    padding-left: 4vw;
-}
+    .tennis {
+        padding-left: 4vw;
+    }
 
 
-h1 {
-    font-size: 3em;
-    padding-left: 1vw;
-}
+    .fitness-text {
+        align-content: center;
+        padding-left: 4vw;
+    }
 
-h2 {
-    text-decoration: none;
-    color: black;
-    padding-left: 3vw;
-    font-size: 1.2em;
-}
+
+    h1 {
+        font-size: 3em;
+        padding-left: 1vw;
+    }
+
+    h2 {
+        text-decoration: none;
+        color: black;
+        padding-left: 3vw;
+        font-size: 1.2em;
+    }
