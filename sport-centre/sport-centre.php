@@ -20,12 +20,14 @@
     </header>
 
     <main>
+        <h1> Kies uw sport</h1>
+        <br>
         <section class="slides">
             <div class="slide">
-                <a class="slide-link, soccer" href="soccer.php">
+                <a class="slide-link" href="soccer.php">
                 <img class="slide-img" alt="Soccer" src="https://media.s-bol.com/xn2QnjERnyO9/550x544.jpg">
                 <br>
-                <h2>Voetbal</h2>
+                <h2 class="soccer">Voetbal</h2>
                 </a>
             </div>
 
@@ -48,9 +50,9 @@
 
             <div class="slide">
                 <a class="slide-link" href="tennis.php">
-                <img class="slide-img" alt="tennis" src="photo-sport-centre/tennis-racket.jpg">
+                <img class="slide-img" alt="tennis" src="photo-sport-centre/pngimg.com%20-%20tennis_PNG10421.png">
                 <br>
-                <h2>Tennis</h2>
+                <h2 class="tennis">Tennis</h2>
                 </a>
             </div>
 

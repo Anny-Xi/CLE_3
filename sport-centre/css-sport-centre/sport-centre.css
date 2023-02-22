@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    padding-left: 17.5vw;
+    padding-left: 24.5vw;
 }
 
 .slides {
@@ -12,9 +12,9 @@ main {
 }
 
 .slide {
-    width: 25vw;
-    height: 35vh;
-    margin: 0;
+    width: 20vw;
+    height: 20vh;
+    margin-bottom: 10vh;
 }
 
 .slide-img {
@@ -29,13 +29,29 @@ main {
     color: black;
 }
 
-.bowling {
-    padding-right: 2vw;
+.soccer {
+    padding-left: 3.5vw;
+}
+
+.tennis {
+    padding-left: 4vw;
+}
+
+
+.fitness-text {
+    align-content: center;
+    padding-left: 4vw;
+}
+
+
+h1 {
+    font-size: 3em;
+    padding-left: 1vw;
 }
 
 h2 {
     text-decoration: none;
     color: black;
-    padding-left: 4vw;
+    padding-left: 3vw;
     font-size: 1.2em;
 }
