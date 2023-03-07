@@ -52,6 +52,7 @@
                 <label for="manualDoors"> De deuren openen door middel van een knop</label><br><br>
 
                 <button class="button" value="submit"> Zoek </button>
+                <a href="filtered-buildings.php"> test </a>
             </form>
         </section>
     </main>

@@ -1,0 +1,9 @@
+.filtered-buildings {
+    display: flex;
+    flex-direction: row;
+}
+
+.sport-image {
+    max-width: 30vw;
+    max-height: 30vh;
+}
