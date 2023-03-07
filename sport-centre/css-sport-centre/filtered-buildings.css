@@ -1,0 +1,26 @@
+.filtered-buildings {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.sport-image {
+    max-width: 30vw;
+    max-height: 30vh;
+    margin-right: 2vw;
+    margin-bottom: 5vw;
+}
+
+.sport-text-box {
+    max-width: 30vw;
+    max-height: 30vh;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin: 5vw;
+}
