@@ -25,7 +25,7 @@
             </div>
         </section>
         <a class="link" href="sport-centre.php"> Terug naar start </a>
-        <a class="link" href="no-buildings-found.php"> Geen gebouwen gevonden </a>
+        <a class="link" href="filtered-buildings.php"> Terug naar overzicht gebouwen </a>
     </main>
 
     <footer></footer>
