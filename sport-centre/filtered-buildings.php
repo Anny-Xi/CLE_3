@@ -1,4 +1,11 @@
 <?php
+    require_once "includes/sport-centre-action.php";
+
+    $data = getBuilding();
+
+    header("Content-Type: application/json");
+    echo json_encode($data);
+    exit;
 ?>
 
 <!doctype html>
@@ -10,45 +17,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Filtered-buildings</title>
     <link rel="stylesheet" type="text/css" href="css-sport-centre/filtered-buildings.css">
+    <script type="text/javascript" src="js-sport-centre/sport-centre-main.js" defer></script>
 </head>
 <body>
     <nav></nav>
-
     <header></header>
 
     <main>
-        <section id="filtered-result">
+        <section class="filtered-result">
 
-            <div class="filtered-buildings">
-                <div>
-                    <img class="sport-image" src="photo-sport-centre/sportschool.jpg" alt="Foto van de sportschool">
-                </div>
-                <div class="sport-text-box">
-                    <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae elementum.</span>
-                </div>
-            </div>
 
-            <div class="filtered-buildings">
-                <div>
-                    <img class="sport-image" src="photo-sport-centre/sportschool.jpg" alt="Foto van de sportschool">
-                </div>
-                <div class="sport-text-box">
-                    <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae elementum.</span>
-                </div>
-            </div>
-
-            <div class="filtered-buildings">
-                <div>
-                    <img class="sport-image" src="photo-sport-centre/sportschool.jpg" alt="Foto van de sportschool">
-                </div>
-                <div class="sport-text-box">
-                    <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae elementum.</span>
-                </div>
-            </div>
         </section>
-        <a class="link" href="sport-centre.php"> Terug naar start </a>
-        <a class="link" href="no-buildings-found.php"> Geen gebouwen gevonden </a>
-
     </main>
 
     <footer>
