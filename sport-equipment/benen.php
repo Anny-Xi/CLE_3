@@ -1,3 +1,6 @@
+<?php
+require_once "includes/actions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +8,7 @@
     <title>Benen</title>
 </head>
 <body>
-<a href="index.html">Terug</a>
+<a href="home.html">Terug</a>
 <h1>Benen</h1>
 <p>Hier komt informatie over het geselecteerde lichaamsdeel en hoe je het kunt trainen</p>
 <br>
