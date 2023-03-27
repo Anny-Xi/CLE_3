@@ -24,7 +24,7 @@ function getApparatuur()
  * @param $id
  * @return mixed
  */
-function getApparatuurdetails($id)
+function getApparatuurDetails($id)
 {
     $tags = [
         1 => [
