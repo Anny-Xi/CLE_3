@@ -15,4 +15,7 @@ $data = getSport();
 //Set the header & output JSON so the client will know what to expect.
 header("Content-Type: application/json");
 
+//get encode the data from getSport function
 $dataArray = json_encode($data);
+
+
