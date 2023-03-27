@@ -4,17 +4,17 @@ function getApparatuur()
     return [
         [
             "id" => 1,
-            "naam" => "test",
+            "naam" => "Armen",
             "ledemaat" => "Armen",
         ],
         [
             "id" => 2,
-            "naam" => "test2",
+            "naam" => "Benen",
             "ledemaat" => "Benen",
         ],
         [
             "id" => 3,
-            "naam" => "test",
+            "naam" => "Core",
             "ledemaat" => "Core",
         ],
     ];
