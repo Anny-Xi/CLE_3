@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <title>Armen</title>
 </head>
 <body>
-<a href="index.html">Terug</a>
+<a href="home.html">Terug</a>
 <h1>Armen</h1>
 <p>Hier komt informatie over het geselecteerde lichaamsdeel en hoe je het kunt trainen</p>
 <br>

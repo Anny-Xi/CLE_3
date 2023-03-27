@@ -1,9 +1,22 @@
 {
-  "Armen": [
+  "Limbs": [
   {
-    "naam": "opperarm",
-    "apparatuur": "es5",
-    "sourceMap": true
+    "id": "1",
+    "naam": "Armen",
+    "ledematen": [
+      {"naam": "Polsen"},
+      {"naam": "Opperarm"},
+      {"naam": "Onderarm"}
+    ]
   },
+    {
+      "id": "2",
+      "naam": "Benen",
+      "ledematen": [
+        {"naam": "Bovenbeen"},
+        {"naam": "Onderbeen"},
+        {"naam": "Voet"}
+      ]
+    }
   ],
 }

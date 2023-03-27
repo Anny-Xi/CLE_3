@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Benen</title>
+    <title>Core</title>
 </head>
 <body>
-<a href="index.html">Terug</a>
-<h1>Benen</h1>
+<a href="home.html">Terug</a>
+<h1>Core</h1>
 <p>Hier komt informatie over het geselecteerde lichaamsdeel en hoe je het kunt trainen</p>
 <br>
 <p>Hier komt alle JSON data van producten die met het geselecteerde lichaamsdeel
