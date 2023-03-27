@@ -14,6 +14,6 @@
 <br>
 <p>Hier komt alle JSON data van producten die met het geselecteerde lichaamsdeel
 te maken hebben.</p>
-
+<div id="limbs"></div>
 </body>
 </html>

@@ -1,16 +1,19 @@
 window.addEventListener('load', init);
 
+let limbs;
+
 /**
  * Initialize after the DOM is ready
  */
 function init()
 {
+    limbs = document.getElementById('limbs');
     getLimbData();
 
 }
 
 function getLimbData(){
-    fetch('includes/actions-link.php')
+    fetch('/CLE_3/sport-equipment/includes/actions-link.php')
         .then((response)=> {
             if(!response.ok){
                 throw new Error(response.statusText);
@@ -24,22 +27,12 @@ function getLimbData(){
 
 function createLimbCards(data) {
 console.log(data);
-    for (let limb of data.results){
+    for (let limb of data){
         let limbCard = document.createElement("div")
         limbCard.classList.add("limb-card")
-        limbCard.dataset.name = limb.name;
-
-        fetch(limb.url)
-            .then((response)=> {
-                if(!response.ok){
-                    throw new Error(response.statusText);
-                }
-                return response.json();
-            })
-            .then(fillLimbCard)
-            .catch(ajaxErrorHandler);
-
-
+        limbCard.dataset.name = limb.naam;
+        limbs.appendChild(limbCard);
+fillLimbCard(limb);
     }
 
 
@@ -47,11 +40,12 @@ console.log(data);
 
 function fillLimbCard(data){
     console.log(data.id);
-    console.log(data.name);
+    console.log(data.naam);
 
-    let limbCard = document.querySelector('.limb-card[data-name='+data.name+']');
+    let limbCard = document.querySelector('div.limb-card[data-name='+data.naam+']');
+    console.log(limbCard);
     let title = document.createElement('h2');
-    title.innerText = `${data.name} (#${data.id})`;
+    title.innerText = `${data.naam} (#${data.id})`;
     limbCard.appendChild(title);
 }
 

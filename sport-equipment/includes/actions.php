@@ -9,7 +9,7 @@ function getApparatuur()
         ],
         [
             "id" => 2,
-            "naam" => "test",
+            "naam" => "test2",
             "ledemaat" => "Benen",
         ],
         [
