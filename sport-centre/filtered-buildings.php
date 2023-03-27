@@ -1,11 +1,4 @@
 <?php
-    require_once "includes/sport-centre-action.php";
-
-    $data = getBuilding();
-
-    header("Content-Type: application/json");
-    echo json_encode($data);
-    exit;
 ?>
 
 <!doctype html>
@@ -17,14 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Filtered-buildings</title>
     <link rel="stylesheet" type="text/css" href="css-sport-centre/filtered-buildings.css">
-    <script type="text/javascript" src="js-sport-centre/sport-centre-main.js" defer></script>
+    <script type="text/javascript" src="js-sport-centre/sport-centre-main.js" defer ></script>
 </head>
 <body>
     <nav></nav>
     <header></header>
 
     <main>
-        <section class="filtered-result">
+        <section id="filtered-result">
 
 
         </section>
