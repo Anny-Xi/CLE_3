@@ -50,7 +50,7 @@ function filter (data) {
 
     createPic = document.createElement('img');
     createPic.classList.add('sport-image');
-    createPic.setAttribute('src', comeslater);
+    createPic.setAttribute('src', );
 
     createDiv.appendChild(createText);
     findSection.appendChild(createDiv);
