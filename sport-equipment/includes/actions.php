@@ -4,17 +4,17 @@ function getApparatuur()
     return [
         [
             "id" => 1,
-            "naam" => "test",
+            "naam" => "Armen",
             "ledemaat" => "Armen",
         ],
         [
             "id" => 2,
-            "naam" => "test",
+            "naam" => "Benen",
             "ledemaat" => "Benen",
         ],
         [
             "id" => 3,
-            "naam" => "test",
+            "naam" => "Core",
             "ledemaat" => "Core",
         ],
     ];
@@ -24,7 +24,7 @@ function getApparatuur()
  * @param $id
  * @return mixed
  */
-function getApparatuurdetails($id)
+function getApparatuurDetails($id)
 {
     $tags = [
         1 => [
