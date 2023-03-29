@@ -4,18 +4,23 @@ function getApparatuur()
     return [
         [
             "id" => 1,
-            "naam" => "Armen",
+            "naam" => "Polsen",
             "ledemaat" => "Armen",
         ],
         [
             "id" => 2,
-            "naam" => "Benen",
-            "ledemaat" => "Benen",
+            "naam" => "Opperarm",
+            "ledemaat" => "Armen",
         ],
         [
             "id" => 3,
-            "naam" => "Core",
-            "ledemaat" => "Core",
+            "naam" => "Onderarm",
+            "ledemaat" => "Armen",
+        ],
+        [
+            "id" => 4,
+            "naam" => "Vingers",
+            "ledemaat" => "Armen",
         ],
     ];
 }
@@ -28,24 +33,21 @@ function getApparatuurDetails($id)
 {
     $tags = [
         1 => [
-            "apparatuur" => "test 1",
+            "id" => 1,
+            "naam" => "Flexibele staaf",
             "tags" => ['polsen', 'onderarm']
         ],
         2 => [
-            "apparatuur" => "test3",
-            "tags" => ['bovenbeen', 'enkel']
+            "naam" => "Dumbbells",
+            "tags" => ['onderarm', 'opperarm']
         ],
         3 => [
-            "apparatuur" => "test4",
+            "naam" => "test4",
             "tags" => ['buik', 'heup']
         ],
         4 => [
-            "apparatuur" => "test5",
+            "naam" => "test5",
             "tags" => ['buik', 'opperarm']
-        ],
-        5 => [
-            "apparatuur" => "test6",
-            "tags" => ['heup', 'bovenbeen']
         ],
     ];
 
