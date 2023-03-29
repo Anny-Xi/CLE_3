@@ -1,5 +1,6 @@
 window.addEventListener('load', init);
 
+let listString = ["slope", "wheelchairLift", "buildingLift", "disabledBathroom","wheelchairAcs", "automaticDoors", "manualDoors"];
 let findSection;
 let createDiv;
 let createText
@@ -18,12 +19,11 @@ function recoverData () {
             }
             return response.json();
         })
-        .then (filter)
+        .then (getFormInput)
         .catch(ajaxErrorHandler);
 }
 
-function ajaxErrorHandler (data) {
-    console.log(data);
+function ajaxErrorHandler () {
 
     findSection = document.getElementById('filtered-result');
     createDiv = document.createElement('div');
@@ -31,14 +31,20 @@ function ajaxErrorHandler (data) {
 
     createText = document.createElement('span');
     createText.classList.add('sport-text-box');
-    createText.innerHTML = 'oeps, er is iets mis gegaan. Probeer het later opnieuw.';
+    createText.innerHTML = 'Oeps! Er is iets mis gegaan. Probeer het later opnieuw.';
 
     findSection.appendChild(createDiv);
     createDiv.appendChild(createText);
 }
 
-function filter (data) {
-    console.log(data);
+function getFormInput () {
+    for (let i = 0; i <= listString.length; i++) {
+        let data = localStorage.getItem(listString[i])
+        console.log(data);
+    }
+    uploadData();
+}
+function uploadData () {
 
     findSection = document.getElementById('filtered-result');
     createDiv = document.createElement('div');
@@ -46,14 +52,12 @@ function filter (data) {
 
     createText = document.createElement('span');
     createText.classList.add('sport-text-box');
-    createText.innerText = '';
+    createText.innerText = 'boop';
 
     createPic = document.createElement('img');
     createPic.classList.add('sport-image');
-    createPic.setAttribute('src', );
+    createPic.setAttribute('src', '');
 
     createDiv.appendChild(createText);
     findSection.appendChild(createDiv);
 }
-
-test
