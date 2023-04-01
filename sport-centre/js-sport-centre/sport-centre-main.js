@@ -43,21 +43,93 @@ function ajaxErrorHandler () {
     createDiv.appendChild(createText);
 }
 
-function getFormInput (data) {
-    slope = localStorage.getItem("slope");
-    wheelchairLift = localStorage.getItem("wheelchairLift");
-    buildingLift = localStorage.getItem("buildingLift");
-    disabledBathroom = localStorage.getItem("disabledBathroom");
-    wheelchairAcs = localStorage.getItem("wheelchairAcs");
-    automaticDoors = localStorage.getItem("automaticDoors");
-    manualDoors = localStorage.getItem("manualDoors");
-    sport = localStorage.getItem("sport");
+function getFormInput(data) {
+    let filterTrue = [];
 
-    console.log(data);
+    const keys = [
+        "slope",
+        "wheelchairLift",
+        "buildingLift",
+        "disabledBathroom",
+        "wheelchairAcs",
+        "automaticDoors",
+        "manualDoors",
+        "sport"
+    ];
 
+    keys.forEach(key => {
+        const value = localStorage.getItem(key);
+        if (value === "true") {
+            filterTrue.push(key);
+        }
+    });
 
+    let goodBuildings = data.filter(item => {
+        return filterTrue.every(key => {
+            return item[key] === true;
+        });
+    });
+
+    console.log(goodBuildings);
     uploadData();
 }
+
+
+
+    // slope = localStorage.getItem("slope");
+    // wheelchairLift = localStorage.getItem("wheelchairLift");
+    // buildingLift = localStorage.getItem("buildingLift");
+    // disabledBathroom = localStorage.getItem("disabledBathroom");
+    // wheelchairAcs = localStorage.getItem("wheelchairAcs");
+    // automaticDoors = localStorage.getItem("automaticDoors");
+    // manualDoors = localStorage.getItem("manualDoors");
+    // sport = localStorage.getItem("sport");
+    //
+    //
+    // let filterTrue = [sport];
+    // let goodBuildings;
+    // slope = localStorage.getItem("slope");
+    // wheelchairLift = localStorage.getItem("wheelchairLift");
+    // buildingLift = localStorage.getItem("buildingLift");
+    // disabledBathroom = localStorage.getItem("disabledBathroom");
+    // wheelchairAcs = localStorage.getItem("wheelchairAcs");
+    // automaticDoors = localStorage.getItem("automaticDoors");
+    // manualDoors = localStorage.getItem("manualDoors");
+    // sport = localStorage.getItem("sport");
+    //
+    // switch(true) {
+    //     case slope:
+    //         filterTrue.push(slope);
+    //         break;
+    //     case wheelchairLift:
+    //         filterTrue.push(wheelchairLift);
+    //         break;
+    //     case buildingLift:
+    //         filterTrue.push(buildingLift);
+    //         break;
+    //     case disabledBathroom:
+    //         filterTrue.push(disabledBathroom);
+    //         break;
+    //     case wheelchairAcs:
+    //         filterTrue.push(wheelchairAcs);
+    //         break;
+    //     case automaticDoors:
+    //         filterTrue.push(automaticDoors);
+    //         break;
+    //     case manualDoors:
+    //         filterTrue.push(manualDoors);
+    //         break;
+    // }
+    //
+    // goodBuildings = data.filter((item) => {
+    //     console.log(item.slope && slope)
+    //     if (item.slope && slope === 'true') return true;
+    //     })
+    //
+    //
+    // console.log(goodBuildings);
+    // uploadData();
+
 
 function uploadData () {
     findSection = document.getElementById('filtered-result');
