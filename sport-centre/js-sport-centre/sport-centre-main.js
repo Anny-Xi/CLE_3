@@ -1,6 +1,13 @@
 window.addEventListener('load', init);
 
-let listString = ["slope", "wheelchairLift", "buildingLift", "disabledBathroom","wheelchairAcs", "automaticDoors", "manualDoors"];
+let slope;
+let wheelchairLift;
+let buildingLift;
+let disabledBathroom;
+let wheelchairAcs;
+let automaticDoors;
+let manualDoors;
+let sport;
 let findSection;
 let createDiv;
 let createText
@@ -24,7 +31,6 @@ function recoverData () {
 }
 
 function ajaxErrorHandler () {
-
     findSection = document.getElementById('filtered-result');
     createDiv = document.createElement('div');
     createDiv.classList.add('filtered-buildings');
@@ -37,15 +43,23 @@ function ajaxErrorHandler () {
     createDiv.appendChild(createText);
 }
 
-function getFormInput () {
-    for (let i = 0; i <= listString.length; i++) {
-        let data = localStorage.getItem(listString[i])
-        console.log(data);
-    }
+function getFormInput (data) {
+    slope = localStorage.getItem("slope");
+    wheelchairLift = localStorage.getItem("wheelchairLift");
+    buildingLift = localStorage.getItem("buildingLift");
+    disabledBathroom = localStorage.getItem("disabledBathroom");
+    wheelchairAcs = localStorage.getItem("wheelchairAcs");
+    automaticDoors = localStorage.getItem("automaticDoors");
+    manualDoors = localStorage.getItem("manualDoors");
+    sport = localStorage.getItem("sport");
+
+    console.log(data);
+
+
     uploadData();
 }
-function uploadData () {
 
+function uploadData () {
     findSection = document.getElementById('filtered-result');
     createDiv = document.createElement('div');
     createDiv.classList.add('filtered-buildings');

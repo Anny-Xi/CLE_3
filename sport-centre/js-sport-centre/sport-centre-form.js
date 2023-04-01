@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let listString = ["slope", "wheelchairLift", "buildingLift", "disabledBathroom","wheelchairAcs", "automaticDoors", "manualDoors"];
+let listString = ["sport", "slope", "wheelchairLift", "buildingLift", "disabledBathroom","wheelchairAcs", "automaticDoors", "manualDoors"];
 let filterForm;
 
 
@@ -13,7 +13,8 @@ function init () {
 function setFormInput (e) {
     e.preventDefault();
 
-    for (let i = 0; i < listString.length; i++) {
+    localStorage.setItem(listString[7], document.getElementById(listString[7]).value);
+    for (let i = 1; i < listString.length; i++) {
         localStorage.setItem(listString[i], document.getElementById(listString[i]).checked);
     }
     location.href="filtered-buildings.php";
