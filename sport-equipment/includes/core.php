@@ -4,23 +4,23 @@ function getApparatuur()
     return [
         [
             "id" => 1,
-            "naam" => "Polsen",
-            "ledemaat" => "Armen",
+            "naam" => "Rug",
+            "ledemaat" => "Core",
         ],
         [
             "id" => 2,
-            "naam" => "Opperarm",
-            "ledemaat" => "Armen",
+            "naam" => "Buik",
+            "ledemaat" => "Core",
         ],
         [
             "id" => 3,
-            "naam" => "Onderarm",
-            "ledemaat" => "Armen",
+            "naam" => "Billen",
+            "ledemaat" => "Core",
         ],
         [
             "id" => 4,
-            "naam" => "Vingers",
-            "ledemaat" => "Armen",
+            "naam" => "Heupen",
+            "ledemaat" => "Core",
         ],
     ];
 }

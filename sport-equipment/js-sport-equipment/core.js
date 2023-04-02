@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let limbUrl = '/CLE_3/sport-equipment/includes/actions-link.php';
+let limbUrl = '/CLE_3/sport-equipment/includes/core-link.php';
 let limbs;
 let limbData = {};
 let detailDialogue;
@@ -49,7 +49,7 @@ function ajaxRequest(url, successHandler)
 }
 
 function createLimbCards(data) {
-console.log(data);
+    console.log(data);
     for (let limb of data){
         let limbCard = document.createElement("div")
         limbCard.classList.add("limb-card")
