@@ -4,72 +4,167 @@ function getBuilding () {
     return [
         [
             "sport" => ["footbal", "basketbal", "tennis", "swimming"],
-            "enterSpecs" => ["helling"],
-            "buildingSpecs" => ["lift"],
-            "doors" => ["Automatisch"],
+            "slope" => false,
+            "wheelchairLift" => false,
+            "buildingLift" => false,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => true,
+            "automaticDoors" => true,
+            "manualDoors" => true,
         ],
 
         [
             "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness"],
-            "enterSpecs" => ["rolstoelLift"],
-            "buildingSpecs" => ["Lift", "invalideToilet", "ruimte"],
-            "doors" => ["knop"]
-        ],
-
-        [
-            "sport" => ["footbal", "fitness"],
-            "enterSpecs" => ["Helling"],
-            "buildingSpecs" => [ "Lift", "Invalide toilet"],
-            "doors" => ["Automatisch"]
-        ],
-
-        [
-            "sport" => ["bowling"],
-            "enterSpecs" => [""],
-            "buildingSpecs" => ["ruimte"],
-            "doors" => ["Automatisch"],
+            "slope" => true,
+            "wheelchairLift" => false,
+            "buildingLift" => false,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => true,
+            "automaticDoors" => true,
+            "manualDoors" => false,
         ],
 
         [
             "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
-            "enterSpecs" => [""],
-            "buildingSpecs" => ["Invalide toilet"],
-            "doors" => [""],
+            "slope" => true,
+            "wheelchairLift" => false,
+            "buildingLift" => true,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => true,
+            "automaticDoors" => false,
+            "manualDoors" => true,
         ],
 
         [
-            "sport" => ["footbal"],
-            "enterSpecs" => ["helling"],
-            "buildingSpecs" => ["lift"],
-            "doors" => ["Automatisch"],
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => true,
+            "wheelchairLift" => true,
+            "buildingLift" => true,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => true,
+            "automaticDoors" => true,
+            "manualDoors" => true,
         ],
 
         [
-            "sport" => ["footbal", "basketbal", "tennis", "swimming"],
-            "enterSpecs" => ["rolstoelLift"],
-            "buildingSpecs" => ["Lift", "invalideToilet", "ruimte"],
-            "doors" => ["knop"]
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => true,
+            "wheelchairLift" => true,
+            "buildingLift" => true,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => false,
+            "automaticDoors" => false,
+            "manualDoors" => false,
         ],
 
         [
-            "sport" => ["tennis", "swimming"],
-            "enterSpecs" => ["Helling"],
-            "buildingSpecs" => [ "Lift", "Invalide toilet"],
-            "doors" => ["Automatisch"]
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => false,
+            "wheelchairLift" => false,
+            "buildingLift" => false,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => true,
+            "automaticDoors" => true,
+            "manualDoors" => true,
         ],
 
         [
-            "sport" => ["footbal", "basketbal", "tennis", "swimming"],
-            "enterSpecs" => [""],
-            "buildingSpecs" => ["ruimte"],
-            "doors" => ["Automatisch"],
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => false,
+            "wheelchairLift" => true,
+            "buildingLift" => true,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => true,
+            "automaticDoors" => false,
+            "manualDoors" => true,
         ],
 
         [
-            "sport" => ["footbal", "fitness"],
-            "enterSpecs" => [""],
-            "buildingSpecs" => ["Invalide toilet"],
-            "doors" => [""],
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => true,
+            "wheelchairLift" => false,
+            "buildingLift" => false,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => true,
+            "automaticDoors" => false,
+            "manualDoors" => true,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => false,
+            "wheelchairLift" => true,
+            "buildingLift" => false,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => true,
+            "automaticDoors" => false,
+            "manualDoors" => true,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness", "swimming"],
+            "slope" => true,
+            "wheelchairLift" => false,
+            "buildingLift" => true,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => false,
+            "automaticDoors" => true,
+            "manualDoors" => false,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness"],
+            "slope" => true,
+            "wheelchairLift" => true,
+            "buildingLift" => false,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => false,
+            "automaticDoors" => true,
+            "manualDoors" => true,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness"],
+            "slope" => true,
+            "wheelchairLift" => false,
+            "buildingLift" => false,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => true,
+            "automaticDoors" => true,
+            "manualDoors" => false,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness"],
+            "slope" => false,
+            "wheelchairLift" => false,
+            "buildingLift" => true,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => false,
+            "automaticDoors" => false,
+            "manualDoors" => true,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness"],
+            "slope" => true,
+            "wheelchairLift" => true,
+            "buildingLift" => true,
+            "disabledBathroom" => false,
+            "wheelchairAcs" => true,
+            "automaticDoors" => false,
+            "manualDoors" => true,
+        ],
+
+        [
+            "sport" => ["footbal", "basketbal", "tennis", "bowling", "fitness"],
+            "slope" => true,
+            "wheelchairLift" => false,
+            "buildingLift" => true,
+            "disabledBathroom" => true,
+            "wheelchairAcs" => false,
+            "automaticDoors" => true,
+            "manualDoors" => true,
         ],
     ];
 }
@@ -78,7 +173,7 @@ function buildingDetails ($id) {
     $tags = [
         1 => [
             "name" => "sportschool 1",
-            "location" => "locatie 1"
+            "location" => "Nesselande"
         ],
         2 => [
             "name" => "sportschool 2",
@@ -112,9 +207,25 @@ function buildingDetails ($id) {
             "name" => "sportschool 9",
             "location" => "Alexander",
         ],
-        10 => [
+        11 => [
             "name" => "sportschool 10",
             "location" => "Slinge",
+        ],
+        12 => [
+            "name" => "sportschool 10",
+            "location" => "Rotterdam Zuid",
+        ],
+        13 => [
+            "name" => "sportschool 10",
+            "location" => "Rotterdam Noord",
+        ],
+        14 => [
+            "name" => "sportschool 10",
+            "location" => "Rotterdam West",
+        ],
+        15 => [
+            "name" => "sportschool 10",
+            "location" => "Rotterdam Oost",
         ],
     ];
     return $tags[$id];
