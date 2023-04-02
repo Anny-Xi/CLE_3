@@ -9,10 +9,15 @@
 <body>
 <a href="home.html">Terug</a>
 <h1 class="main-title">Armen</h1>
-
 <p>Hier komt informatie over het geselecteerde lichaamsdeel en hoe je het kunt trainen</p>
-<div id="limbs"></div>
 
+<h3>Favorieten:</h3>
+<form id="favorite">
+    <div class="favorite-item">
+    </div>
+</form>
+
+<div id="limbs"></div>
 
 <dialog class="modal" id="limb-detail">
     <div class="modal-content"></div>
