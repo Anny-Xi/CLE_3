@@ -142,7 +142,7 @@ function uploadData () {
 
     createPic = document.createElement('img');
     createPic.classList.add('sport-image');
-    createPic.setAttribute('src', '');
+    createPic.setAttribute('src', 'sport-centre/photo-sport-centre/sportschool.jpg');
 
     createDiv.appendChild(createText);
     findSection.appendChild(createDiv);
