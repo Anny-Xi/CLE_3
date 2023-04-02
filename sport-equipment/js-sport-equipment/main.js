@@ -99,10 +99,6 @@ function getLimbDetail(limb){
     limbCard.appendChild(text);
     limbData[limb.id] = limb;
 
-    let button = document.createElement('button');
-    button.innerHTML = "Voeg toe als favoriet";
-    limbCard.appendChild(button);
-
 }
 
 
