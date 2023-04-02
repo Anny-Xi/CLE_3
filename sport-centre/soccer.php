@@ -52,6 +52,9 @@
                 <input type="checkbox" id="manualDoors" name="manualDoors">
                 <label for="manualDoors"> De deuren openen door middel van een knop</label><br><br>
 
+                <input type="hidden" id="sport" value="soccer">
+
+
                 <button class="button" name="submit" id="submit"> Zoek </button>
                 <a href="filtered-buildings.php"> test </a>
             </form>
