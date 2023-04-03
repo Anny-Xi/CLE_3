@@ -17,10 +17,9 @@
     <header></header>
 
     <main>
-        <section id="filtered-result">
-
-
-        </section>
+        <section id="filtered-result"> </section>
+        <dialog class="modal" id="building-detail">
+            <div class="modal-content"></div>
     </main>
 
     <footer>
