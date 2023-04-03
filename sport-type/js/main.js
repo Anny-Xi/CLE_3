@@ -1,22 +1,30 @@
 window.addEventListener('load', init);
 
 //Globals
-let apiUrl = '../includes/action.php'
-// let galary
+let apiUrl = "sport_types.php"
+
+let mainPage
+let sportContainer
+
+
 
 /**
  * Initialize after the DOM is ready
  */
 function init()
 {
-    galary = document.getElementById("pokemon-gallery")
-    getSport()
+    mainPage = document.getElementById("main_sport_type")
+
+    sportContainer = document.getElementById("Sport_List")
+
+    fetchApi(apiUrl, getSport)
+
 }
 
 /**
- * Do the actual AJAX call to the provided URL
+ * Fetch function require, url succesHandler & errorHandler
  */
-function getSport() {
+function fetchApi(apiUrl, successHandler) {
     fetch(apiUrl)
         .then((response) => {
             if (!response.ok) {
@@ -24,8 +32,35 @@ function getSport() {
             }
             return response.json()
         })
-        .then(getPokemonsSuccessHandler)
-        .catch(getPokemonsErrorHandler)
+        .then(successHandler)
+        .catch(getSportErrorHandler)
+
+}
+
+
+/**
+ * Do the actual AJAX call to the provided URL
+ */
+function getSport(data) {
+
+    // console.log(data)
+
+    //Loop through the list of sport
+    for (let sport of data.Sport) {
+
+        let sportCard = document.createElement('div');
+        sportCard.classList.add('pokemon-card');
+        sportCard.dataset.name = sport.naam;
+
+        //Append Sport card to the actual HTML
+        sportContainer.appendChild(sportCard);
+
+        let sportUrl = `sport_types.php?id=${sport.id}`
+        console.log(sportUrl)
+
+        //Retrieve the detail information from the API
+        fetchApi(sportUrl, getSportSuccessHandler)
+    }
 }
 
 /**
@@ -33,29 +68,22 @@ function getSport() {
  *
  * @param data
  */
-function getPokemonsSuccessHandler(data) {
-    console.log(data);
-    for (const pokemon of data.results){
-        console.log(pokemon)
-        let div = document.createElement('div')
-        div.classList.add('pokemon-card')
-        //!!
-        div.dataset.name = pokemon.name
+function getSportSuccessHandler(data) {
+    console.log(data)
+    let sport = data
 
-        galary.appendChild(div)
+    console.log(sport)
+    console.log(sport.naam)
 
-        fetch(pokemon.url)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-                }
-                return response.json()
-            })
-            .then(getPokemonDetailSuccessHandler)
-    }
+    let div = document.createElement('div')
+
+    let h2 = document.createElement('h2')
+    h2.innerText = `${pokemon.name} (#${pokemon.id})`
+    div.appendChild(h2)
+
 }
 
-function getPokemonDetailSuccessHandler(pokemon) {
+function getSportDetailSuccessHandler(sport) {
     console.log(pokemon)
     console.log(pokemon.name, "#", pokemon.id)
     console.log(pokemon.sprites.other.home.front_default)
@@ -74,13 +102,13 @@ function getPokemonDetailSuccessHandler(pokemon) {
 }
 
 /**
- * Do something useful with the error you got back from the external API
+ * Do something useful with the error you got back from the API
  *
  * @param data
  */
-function getPokemonsErrorHandler(data) {
+function getSportErrorHandler(data) {
     console.log(data);
     let error = document.createElement('div')
     error.innerHTML = "Er gaat iets fout!"
-    galary.before(error)
+    mainPage.before(error)
 }
