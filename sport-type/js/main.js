@@ -4,7 +4,7 @@ window.addEventListener('load', init);
 let apiUrl = "sport_types.php"
 let sportData = {}
 
-let mainPage
+let mainList
 let sportContainer
 let detailDialog;
 let detailContent;
@@ -14,11 +14,10 @@ let detailContent;
  * Initialize after the DOM is ready
  */
 function init() {
-    mainPage = document.getElementById("main_sport_type")
-    mainPage.addEventListener('click',sportClickHandler)
+    mainList = document.getElementById("Sport_List")
+    mainList.addEventListener('click',sportClickHandler)
 
     sportContainer = document.getElementById("Sport_List")
-
 
     //Retrieve modal elements, and add click event for closing modal
     detailDialog = document.getElementById('sport-detail');
@@ -44,7 +43,7 @@ function fetchApi(apiUrl, successHandler) {
             return response.json()
         })
         .then(successHandler)
-        .catch(getSportErrorHandler)
+        .catch(ajaxErrorHandler)
 
 }
 
@@ -62,7 +61,7 @@ function getSport(data) {
         sportCard.dataset.name = sport.naam;
 
         //Append sport card to the actual HTML -> Main sport list
-        mainPage.appendChild(sportCard)
+        mainList.appendChild(sportCard)
 
         let sportUrl = `sport_types.php?id=${sport.id}`
 
@@ -78,15 +77,13 @@ function getSport(data) {
  */
 function fillSportCard(sport) {
 
-    console.log(sport.naam)
-
     //Wrapper element for every sport card
-    let sportCard = document.querySelector(`.pokemon-card[data-name='${sport.naam}']`);
+    let sportCard = document.querySelector(`.sport-card[data-name='${sport.naam}']`);
 
-    //Element for the name of the Pokémon
+    //Element for the name of the Sport
     let title = document.createElement('h2');
-    title.innerHTML = `${sport.id}`;
-    // sportCard.appendChild(title);
+    title.innerHTML = `${sport.naam}`;
+    sportCard.appendChild(title);
 
     // //Element for the image of the Pokémon
     // let image = document.createElement('img');
@@ -98,10 +95,11 @@ function fillSportCard(sport) {
     button.innerHTML = 'Show Detail';
     button.dataset.id = sport.id;
 
-    // sportCard.appendChild(button);
+    sportCard.appendChild(button);
 
-    //Store Pokémon data globally for later use in other functions
-    // pokemonData[sport.id] = sport;
+    //Store sport data globally for later use in other functions
+    sportData[sport.id] = sport;
+
 }
 
 /**
@@ -119,24 +117,19 @@ function sportClickHandler(e)
     }
 
     //Get the information from the global stored data
-    let pokemon = pokemonData[clickedItem.dataset.id];
+    let sport = sportData[clickedItem.dataset.id];
 
     //Reset the content
     detailContent.innerHTML = '';
 
     //Show the name we used on the main grid
     let title = document.createElement('h1');
-    title.innerHTML = `${pokemon.name} (#${pokemon.id})`;
+    title.innerHTML = `${sport.naam} (#${sport.id})`;
     detailContent.appendChild(title);
-
-    //Display the shiny
-    let shiny = document.createElement('img');
-    shiny.src = pokemon.sprites.other.home.front_shiny;
-    detailContent.appendChild(shiny);
 
     //Open the modal
     detailDialog.showModal();
-    gallery.classList.add('dialog-open');
+    mainList.classList.add('dialog-open');
 }
 
 
@@ -145,11 +138,11 @@ function sportClickHandler(e)
  *
  * @param data
  */
-function getSportErrorHandler(data) {
+function ajaxErrorHandler(data) {
     console.log(data);
     let error = document.createElement('div')
     error.innerHTML = "Er gaat iets fout!"
-    mainPage.before(error)
+    mainList.before(error)
 }
 
 /**

@@ -1,3 +1,13 @@
+
+h2{
+    text-transform: capitalize;
+}
+
+#Sport_List {
+    display: flex;
+}
+
+
 .modal {
     opacity: 0;
     transition: all 0.7s ease;
@@ -36,7 +46,7 @@
 .modal-content h1 {
     margin: 0;
     padding: 20px;
-    background-color: rgb(72, 211, 220);
+    background-color: rgb(7, 44, 87);
     color: white;
     text-transform: capitalize;
 }
