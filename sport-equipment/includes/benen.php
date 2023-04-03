@@ -4,23 +4,23 @@ function getApparatuur()
     return [
         [
             "id" => 1,
-            "naam" => "Polsen",
-            "ledemaat" => "Armen",
+            "naam" => "Enkels",
+            "ledemaat" => "Benen",
         ],
         [
             "id" => 2,
-            "naam" => "Opperarm",
-            "ledemaat" => "Armen",
+            "naam" => "Opperbeen",
+            "ledemaat" => "Benen",
         ],
         [
             "id" => 3,
-            "naam" => "Onderarm",
-            "ledemaat" => "Armen",
+            "naam" => "Dijen",
+            "ledemaat" => "Benen",
         ],
         [
             "id" => 4,
-            "naam" => "Vingers",
-            "ledemaat" => "Armen",
+            "naam" => "Tenen",
+            "ledemaat" => "Benen",
         ],
     ];
 }
@@ -37,12 +37,12 @@ function getApparatuurDetails($id)
             "informatie" => "Wrist wraps zijn simpelweg elastische banden voor om je pols. 
             De polsbeschermers worden gebruikt in de sportschool bij bepaalde oefeningen. 
             Ze bieden ondersteuning en houden het polsgewricht op temperatuur.",
-            "naam" => "Flexibele staaf",
-            "tags" => ['polsen', 'onderarm']
+            "naam" => "Circulation Leg stoelfiets",
+            "tags" => ['voeten', 'onderbeen']
         ],
         2 => [
             "informatie" => "test",
-            "naam" => "Dumbbells",
+            "naam" => "Widestandband",
             "tags" => ['onderarm', 'opperarm']
         ],
         3 => [

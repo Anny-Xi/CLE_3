@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let limbUrl = '/CLE_3/sport-equipment/includes/actions-link.php';
+let limbUrl = '/CLE_3/sport-equipment/includes/benen-link.php';
 let limbs;
 let limbData = {};
 let detailDialogue;
@@ -49,7 +49,7 @@ function ajaxRequest(url, successHandler)
 }
 
 function createLimbCards(data) {
-console.log(data);
+    console.log(data);
     for (let limb of data){
         let limbCard = document.createElement("div")
         limbCard.classList.add("limb-card")
@@ -98,6 +98,10 @@ function getLimbDetail(limb){
     text.innerHTML = `${limb.informatie}`;
     limbCard.appendChild(text);
     limbData[limb.id] = limb;
+
+    let button = document.createElement('button');
+    button.innerHTML = "Voeg toe als favoriet";
+    limbCard.appendChild(button);
 
 }
 
