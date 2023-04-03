@@ -6,7 +6,7 @@ let limbData = {};
 let detailDialogue;
 let favoriteItem;
 let detailContent;
-let todoItems = [];
+let favoriteItems = [];
 let inputField;
 let list;
 
@@ -29,7 +29,6 @@ function init()
     detailDialogue.addEventListener('click', detailModalClickHandler);
 
     favoriteItem = document.getElementById('favorite');
-    favoriteItem.addEventListener('click', addFavoriteItem);
     favoriteItem.addEventListener('click', favoriteClickHandler);
 
     //Connect variables with HTML elements
@@ -38,14 +37,14 @@ function init()
     list = document.querySelector('#list');
 
     //Add event listeners for form & removal
-    form.addEventListener('submit', formSubmitHandler);
+    detailDialogue.addEventListener('click', formSubmitHandler);
     list.addEventListener('click', todoItemClickHandler);
 
     //Retrieve current items from local storage & add them to the list
-    let todoItemsString = localStorage.getItem('todoItems');
+    let todoItemsString = localStorage.getItem('favoriteItems');
     if (todoItemsString) { //Or: if (todoItemsString !== null) {
-        todoItems = JSON.parse(todoItemsString);
-        for (let todoItem of todoItems) {
+        favoriteItems = JSON.parse(todoItemsString);
+        for (let todoItem of favoriteItems) {
             addTodoItem(todoItem);
         }
     }
@@ -119,7 +118,15 @@ function getLimbDetail(limb){
     let text = document.createElement('p');
     text.innerHTML = `${limb.informatie}`;
     limbCard.appendChild(text);
+
+    let button = document.createElement('button');
+    button.innerHTML = "Toevoegen aan favoriet";
+    button.dataset.id = limb.naam;
+    limbCard.appendChild(button);
+
     limbData[limb.id] = limb;
+
+
 
 }
 
@@ -148,27 +155,32 @@ function favoriteClickHandler(e){
     }
 }
 
-function addFavoriteItem(e){
-
-}
 function formSubmitHandler(e)
 {
     e.preventDefault();
-
+    let clickedItem = e.target;
+    console.log(clickedItem);
+    if (clickedItem.nodeName !== "BUTTON"){
+        return;
+    }
     //Check if the field is not empty
-    let inputValue = inputField.value;
+    let inputValue = clickedItem.dataset.id;
+
+
+
+    console.log(inputValue);
     if (inputValue !== '') {
         //Add to the HTML list & local storage
         addTodoItem(inputValue);
-        todoItems.push(inputValue);
-        localStorage.setItem('todoItems', JSON.stringify(todoItems));
+        favoriteItems.push(inputValue);
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
 
         //Reset the field
-        inputField.value = '';
-        inputField.classList.remove('error');
+        clickedItem.value = 'Toegevoegd!';
+        clickedItem.classList.remove('error');
     } else {
         //Add an error state with CSS
-        inputField.classList.add('error');
+        clickedItem.classList.add('error');
     }
 }
 
@@ -199,9 +211,9 @@ function todoItemClickHandler(e)
     }
 
     //Remove from local storage
-    let itemIndex = todoItems.indexOf(todoTarget.innerText);
-    todoItems.splice(itemIndex, 1);
-    localStorage.setItem('todoItems', JSON.stringify(todoItems));
+    let itemIndex = favoriteItems.indexOf(todoTarget.innerText);
+    favoriteItems.splice(itemIndex, 1);
+    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
 
     //Remove from HTML
     todoTarget.remove();
