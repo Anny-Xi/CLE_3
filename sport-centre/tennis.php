@@ -1,4 +1,5 @@
-<?php ?>
+<?php
+?>
 
 <!doctype html>
 <html lang="en">
@@ -8,47 +9,56 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sport-tennis</title>
-    <link rel="stylesheet" type="text/css" href="css-sport-centre/sport-filter.css">
+    <script type="text/javascript" src="js-sport-centre/sport-centre-form.js" defer ></script>
 </head>
 <body>
-    <main>
-        <section class="sport-container">
-            <div class="sport-image-box">
-                <img class="sport-image" alt="Foto van een voetbal" src="photo-sport-centre/pngimg.com%20-%20tennis_PNG10421.png">
-            </div>
+<nav>
+</nav>
 
-            <div class="sport-text-box">
-                <h2> Tennis </h2>
-                <span class="sport-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae elementum. </span>
-            </div>
-        </section>
+<header>
+</header>
+<main>
+    <section class="sport-container">
+        <div class="sport-image-box">
+            <img class="sport-image" alt="Foto van een voetbal" src="photo-sport-centre/voetbal.jpg">
+        </div>
 
-        <section class="sport-filters-container">
-            <form>
-                <input type="checkbox" id="slope" name="slope">
-                <label for="slope"> Ingang voorziet van een helling</label> <br>
+        <div class="sport-text-box">
+            <h2> Voetbal </h2>
+            <span class="sport-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae elementum. </span>
+        </div>
+    </section>
 
-                <input type="checkbox" id="wheelchairLift" name="wheelchairLift">
-                <label for="wheelchairLift"> Ingang voorziet van een rolstoel lift</label><br>
+    <section class="sport-filters-container">
+        <form id="filter-form">
+            <input type="checkbox" id="slope" name="slope">
+            <label for="slope"> Ingang voorziet van een helling</label> <br>
 
-                <input type="checkbox" id="buildingLift" name="buildingLift">
-                <label for="buildingLift"> Het gebouw is voorzien van een lift</label><br>
+            <input type="checkbox" id="wheelchairLift" name="wheelchairLift">
+            <label for="wheelchairLift"> Ingang voorziet van een rolstoel lift</label><br>
 
-                <input type="checkbox" id="disabledBathroom" name="disabledBathroom">
-                <label for="disabledBathroom"> Het gebouw is voorzien van een invalide toilet </label><br>
+            <input type="checkbox" id="buildingLift" name="buildingLift">
+            <label for="buildingLift"> Het gebouw is voorzien van een lift</label><br>
 
-                <input type="checkbox" id="wheelchairAcs" name="wheelchairAcs">
-                <label for="wheelchairAcs"> Het gebouw kan gemakkelijk betreed worden met een rolstoel</label><br>
+            <input type="checkbox" id="disabledBathroom" name="disabledBathroom">
+            <label for="disabledBathroom"> Het gebouw is voorzien van een invalide toilet </label><br>
 
-                <input type="checkbox" id="automaticDoors" name="automaticDoors">
-                <label for="automaticDoors"> De deuren openen automatisch</label><br>
+            <input type="checkbox" id="wheelchairAcs" name="wheelchairAcs">
+            <label for="wheelchairAcs"> Het gebouw kan gemakkelijk betreed worden met een rolstoel</label><br>
 
-                <input type="checkbox" id="manualDoors" name="manualDoors">
-                <label for="manualDoors"> De deuren openen door middel van een knop</label><br><br>
+            <input type="checkbox" id="automaticDoors" name="automaticDoors">
+            <label for="automaticDoors"> De deuren openen automatisch</label><br>
 
-                <button class="button" value="submit"> Zoek </button>
-            </form>
-        </section>
-    </main>
+            <input type="checkbox" id="manualDoors" name="manualDoors">
+            <label for="manualDoors"> De deuren openen door middel van een knop</label><br><br>
+
+            <input type="hidden" id="sport" value="tennis">
+
+
+            <button class="button" name="submit" id="submit"> Zoek </button>
+            <a href="filtered-buildings.php"> test </a>
+        </form>
+    </section>
+</main>
 </body>
 </html>

@@ -6,6 +6,9 @@ let limbData = {};
 let detailDialogue;
 let favoriteItem;
 let detailContent;
+let favoriteItems = [];
+let inputField;
+let list;
 
 
 /**
@@ -24,11 +27,27 @@ function init()
     detailDialogue = document.getElementById('limb-detail');
     detailContent = document.querySelector('.modal-content');
     detailDialogue.addEventListener('click', detailModalClickHandler);
-    detailDialogue.addEventListener('close', dialogCloseHandler);
 
     favoriteItem = document.getElementById('favorite');
-    favoriteItem.addEventListener('click', addFavoriteItem);
     favoriteItem.addEventListener('click', favoriteClickHandler);
+
+    //Connect variables with HTML elements
+    let form = document.querySelector('#favorite-form');
+    inputField = document.querySelector('#favorite-field');
+    list = document.querySelector('#list');
+
+    //Add event listeners for form & removal
+    detailDialogue.addEventListener('click', formSubmitHandler);
+    list.addEventListener('click', todoItemClickHandler);
+
+    //Retrieve current items from local storage & add them to the list
+    let todoItemsString = localStorage.getItem('favoriteItems');
+    if (todoItemsString) { //Or: if (todoItemsString !== null) {
+        favoriteItems = JSON.parse(todoItemsString);
+        for (let todoItem of favoriteItems) {
+            addTodoItem(todoItem);
+        }
+    }
 
 
 
@@ -90,6 +109,8 @@ function limbClickHandler(e){
 function getLimbDetail(limb){
     let limbCard = document.querySelector(`.modal-content`);
 
+    limbCard.innerHTML = '';
+
     let title = document.createElement('h2');
     title.innerHTML = `${limb.naam}  (#${limb.tags})`;
     limbCard.appendChild(title);
@@ -97,7 +118,15 @@ function getLimbDetail(limb){
     let text = document.createElement('p');
     text.innerHTML = `${limb.informatie}`;
     limbCard.appendChild(text);
+
+    let button = document.createElement('button');
+    button.innerHTML = "Toevoegen aan favoriet";
+    button.dataset.id = limb.naam;
+    limbCard.appendChild(button);
+
     limbData[limb.id] = limb;
+
+
 
 }
 
@@ -126,12 +155,68 @@ function favoriteClickHandler(e){
     }
 }
 
-function addFavoriteItem(e){
-
-}
-
-
-function dialogCloseHandler(e)
+function formSubmitHandler(e)
 {
-    limbs.classList.remove('dialog-open');
+    e.preventDefault();
+    let clickedItem = e.target;
+    console.log(clickedItem);
+    if (clickedItem.nodeName !== "BUTTON"){
+        return;
+    }
+    //Check if the field is not empty
+    let inputValue = clickedItem.dataset.id;
+
+
+
+    console.log(inputValue);
+    if (inputValue !== '') {
+        //Add to the HTML list & local storage
+        addTodoItem(inputValue);
+        favoriteItems.push(inputValue);
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+
+        //Reset the field
+        clickedItem.value = 'Toegevoegd!';
+        clickedItem.classList.remove('error');
+    } else {
+        //Add an error state with CSS
+        clickedItem.classList.add('error');
+    }
 }
+
+/**
+ * Add a new item to the HTML
+ *
+ * @param todoText
+ */
+function addTodoItem(todoText)
+{
+    let listItem = document.createElement('li');
+    listItem.innerText = todoText;
+    list.appendChild(listItem);
+}
+
+/**
+ * Remove the clicked list item
+ *
+ * @param e
+ */
+function todoItemClickHandler(e)
+{
+    let todoTarget = e.target;
+
+    //Only continue if we clicked on a list item
+    if (todoTarget.nodeName !== 'LI') {
+        return;
+    }
+
+    //Remove from local storage
+    let itemIndex = favoriteItems.indexOf(todoTarget.innerText);
+    favoriteItems.splice(itemIndex, 1);
+    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+
+    //Remove from HTML
+    todoTarget.remove();
+}
+
+
