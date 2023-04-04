@@ -37,7 +37,7 @@ function init()
     list = document.querySelector('#list');
 
     //Add event listeners for form & removal
-    detailDialogue.addEventListener('click', formSubmitHandler);
+    detailContent.addEventListener('click', formSubmitHandler);
     list.addEventListener('click', todoItemClickHandler);
 
     //Retrieve current items from local storage & add them to the list
@@ -159,10 +159,11 @@ function formSubmitHandler(e)
 {
     e.preventDefault();
     let clickedItem = e.target;
-    console.log(clickedItem);
-    if (clickedItem.nodeName !== "BUTTON"){
+
+    if (clickedItem.nodeName !== "BUTTON" && clickedItem.classList.contains('modal-close')){
         return;
     }
+    console.log(clickedItem.classList.contains('modal-close'));
     //Check if the field is not empty
     let inputValue = clickedItem.dataset.id;
 
