@@ -345,3 +345,34 @@ function sportsDetail($id)
     return $details[$id];
 }
 
+
+function sportsFilter($limit)
+{
+//    "Benen" => ["geen beperking","licht beperkt", "beperkt", "erg beperkt"],
+//    "Armen" => ["licht beperkt", "beperkt", "erg beperkt"],
+
+    $selection = [
+        "geen_beperking_geen_beperking_binnen" => [
+            "naamSport" => ["U bent niet beperkt, u kunt deelnemen aan alle sport"]
+        ],
+        "geen_beperking_geen_beperking_binnen_en_buiten" => [
+            "naamSport" => ["U bent niet beperkt, u kunt deelnemen aan alle sport"]
+        ],
+        "geen_beperking_geen_beperking_buiten" => [
+            "naamSport" => ["U bent niet beperkt, u kunt deelnemen aan alle sport"]
+        ],
+        "licht_beperkt_geen_beperking_binnen" => [
+            "naamSport" => ["gewichtheffen"],["boogschieten"]
+        ],
+        "licht_beperkt_geen_beperking_buiten" => [
+            "naamSport" => ["gewichtheffen"],["boogschieten"]
+        ],
+        "beperkt_geen_beperking" => [
+            "naamSport" => ["zwemmen"],["gewichtheffen"],["boogschieten"],["fietsen"]
+        ],
+    ];
+
+    return $selection[$limit];
+}
+
+

@@ -11,6 +11,10 @@ if (!isset($_GET['id'])) {
     $data = sportsDetail($_GET['id']);
 }
 
+if(isset($_GET['limit'])) {
+    $data = sportsFilter($_GET['limit']);
+}
+
 //Disable caching for page
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");

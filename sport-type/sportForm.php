@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<main>
+<main id="main_form">
     <button id="backToPrevious">Terg naar vorig pagina</button>
 
     <form id="sport_form">

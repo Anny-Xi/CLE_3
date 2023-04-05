@@ -1,15 +1,79 @@
-main{
+body{
     margin: 0 auto;
     background-color: #bcdaf5;
+}
+main{
+    margin: 5vw 5vw;
+}
+
+#main_form{
+    margin: 2vw 5vw;
 }
 
 h2{
     text-transform: capitalize;
 }
 
+#open_form{
+    margin: 0 auto;
+    width: 40vw;
+    background-color: white;
+    padding: 0.5vw 4vw;
+}
+
+#formField{
+    margin-bottom: 2vh;
+}
+#formField :hover{
+    background-color: #89a9a9;
+}
+
+#sendForm {
+    margin: 1vw auto;
+    padding:5px 15px;
+    background: #c7c7c7;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#sendForm:hover{
+    background:#89a9a9;
+}
+
 #Sport_List {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    margin: 0 auto;
+}
+
+.sport-card{
+    background-color: white;
+    margin: 1vw 1vw;
+    padding: 1vw;
+    height: 17vh;
+}
+.sport-card:hover{
+    background-color: #c3d9d9;
+}
+
+#sport_form{
+    background-color: white;
+    margin: 2vw auto;
+    padding: 1vw 2vw;
+}
+
+button{
+    padding: 1vw;
+    margin: 0 auto;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+button:hover{
+    background-color: #89a9a9;
 }
 
 
@@ -62,7 +126,7 @@ h2{
 
 /* shiny shiny */
 .modal-content::after {
-    content: "";
+    /*content: "";*/
     position: absolute;
     display: block;
     width: 100%;

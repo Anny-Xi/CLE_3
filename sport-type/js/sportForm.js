@@ -13,6 +13,7 @@ function init() {
     sportForm = document.getElementById('sport_form');
     backButton = document.getElementById('backToPrevious')
     sportForm.addEventListener('submit', SportFormInput)
+    backButton.addEventListener('click',goBack)
 
 }
 
