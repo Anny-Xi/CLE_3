@@ -33,21 +33,24 @@
 
     .soccer {
         padding-left: 3.5vw;
+        text-decoration: none;
     }
 
     .tennis {
         padding-left: 4vw;
+        text-decoration: none;
     }
-
 
     .fitness-text {
         align-content: center;
         padding-left: 4vw;
+        text-decoration: none;
     }
 
 
     h1 {
         font-size: 3em;
+        text-decoration: none;
         padding-left: 1vw;
     }
 
