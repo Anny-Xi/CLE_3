@@ -9,6 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sport-soccer</title>
+    <link rel="stylesheet" type="text/css" href="css-sport-centre/sport-filter.css">
     <script type="text/javascript" src="js-sport-centre/sport-centre-form.js" defer ></script>
 </head>
 <body>
@@ -56,7 +57,6 @@
 
 
                 <button class="button" name="submit" id="submit"> Zoek </button>
-                <a href="filtered-buildings.php"> test </a>
             </form>
         </section>
     </main>
