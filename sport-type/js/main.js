@@ -5,6 +5,9 @@ let apiUrl = "sport_types.php"
 let sportData = {}
 
 let mainList
+
+let openSportForm
+
 let sportContainer
 let detailDialog;
 let detailContent;
@@ -19,11 +22,16 @@ function init() {
 
     sportContainer = document.getElementById("Sport_List")
 
-    //Retrieve modal elements, and add click event for closing modal
+    //Retrieve modal elements for detail sport, and add click event for closing modal
     detailDialog = document.getElementById('sport-detail');
     detailContent = detailDialog.querySelector('.modal-content');
     detailDialog.addEventListener('click', detailModalClickHandler);
     detailDialog.addEventListener('close', dialogCloseHandler);
+
+
+    //js handler to get if the openform button has been clicked
+    openSportForm = document.getElementById("open_form")
+    openSportForm.addEventListener('click',openForm)
 
 
     //Start the application with loading the API data
@@ -85,12 +93,12 @@ function fillSportCard(sport) {
     title.innerHTML = `${sport.naam}`;
     sportCard.appendChild(title);
 
-    // //Element for the image of the Pokémon
+    // //Element for the image of the sport
     // let image = document.createElement('img');
     // image.src = pokemon.sprites.other.home.front_default;
     // sportCard.appendChild(image);
 
-    //Element for the button to load detail about that pokemon
+    //Element for the button to load detail about that sport
     let button = document.createElement('button');
     button.innerHTML = 'Show Detail';
     button.dataset.id = sport.id;
@@ -103,7 +111,7 @@ function fillSportCard(sport) {
 }
 
 /**
- * Open the detailview with information of a Pokémon
+ * Open the detailview with information of a sport
  *
  * @param e
  */
@@ -124,13 +132,41 @@ function sportClickHandler(e)
 
     //Show the name we used on the main grid
     let title = document.createElement('h1');
-    title.innerHTML = `${sport.naam} (#${sport.id})`;
+    title.innerHTML = `${sport.naam}`;
     detailContent.appendChild(title);
+
+    //Show the text we used as description
+    let description = document.createElement('p');
+    description.innerHTML = `Over dit sport: ${sport.beschrijving}`;
+    detailContent.appendChild(description);
+
+    //Show the text we used as limit on legs
+    let limitLeg = document.createElement('p');
+    limitLeg.innerHTML = `Geschikt voor deze niveau van beperking met benen: ${sport.Benen}`;
+    detailContent.appendChild(limitLeg);
+
+    //Show the text we used as limit on arms
+    let limitArm = document.createElement('p');
+    limitArm.innerHTML = `Geschikt voor deze niveau van beperking met armen: ${sport.Armen}`;
+    detailContent.appendChild(limitArm);
+
+    //here comes localstorage function
 
     //Open the modal
     detailDialog.showModal();
     mainList.classList.add('dialog-open');
 }
+
+/**
+ * Open the form page with quiz list
+ *
+ *
+ */
+function openForm()
+{
+    window.location.href = "sportForm.php";
+}
+
 
 
 /**
@@ -154,6 +190,7 @@ function detailModalClickHandler(e)
 {
     if (e.target.nodeName === 'DIALOG' || e.target.nodeName === 'BUTTON') {
         detailDialog.close();
+        quizDialog.close();
     }
 }
 

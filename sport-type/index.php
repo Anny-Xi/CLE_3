@@ -12,7 +12,10 @@
 <body>
 <main id="main_sport_type">
     <h1 class="main-title">Sporten voor mensen met beperkingen</h1>
-    <p>Sporten is gunstig voor mensen met motorische beperkingen en kan hun fysieke gezondheid, zelfvertrouwen en sociale netwerken verbeteren. Er zijn veel opties beschikbaar, zoals rolstoelbasketbal, zitvolleybal, boccia en para-tafeltennis. Aanpassingen in regels, materialen en technieken zijn soms nodig. Specialisten en fysiotherapeuten kunnen helpen bij het vinden van de juiste sport die past bij de beperkingen en interesses.
+    <p>Sporten is gunstig voor mensen met motorische beperkingen en kan hun fysieke gezondheid, zelfvertrouwen en
+        sociale netwerken verbeteren. Er zijn veel opties beschikbaar, zoals rolstoelbasketbal, zitvolleybal, boccia en
+        para-tafeltennis. Aanpassingen in regels, materialen en technieken zijn soms nodig. Specialisten en
+        fysiotherapeuten kunnen helpen bij het vinden van de juiste sport die past bij de beperkingen en interesses.
     </p>
 
     <!--    section for show form page-->
@@ -27,6 +30,15 @@
 
     <dialog class="modal" id="sport-detail">
         <div class="modal-content"></div>
+        <button class="modal-close">❌</button>
+    </dialog>
+
+    <dialog class="modal" id="sport-form">
+        <div class="modal-content" id="sport_Quiz">
+            <h2>Quiz vragen</h2>
+            <p>Vink het antwoord aan als het voor u van toepasing is. </p>
+
+        </div>
         <button class="modal-close">❌</button>
     </dialog>
 
