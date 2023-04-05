@@ -20,6 +20,7 @@
         <section id="filtered-result"> </section>
         <dialog class="modal" id="building-detail">
             <div class="modal-content"></div>
+            <button class="modal-close">❌</button>
     </main>
 
     <footer>

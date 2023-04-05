@@ -11,11 +11,25 @@ let manualDoors;
 let sport;
 let findSection;
 let createDiv;
-let createText
+let createText;
+let buildingData = {};
+
+
+
 
 
 function init()
 {
+    //Retrieve gallery and add a click event for every building
+    findSection = document.getElementById('filtered-result');
+    findSection.addEventListener('click', buildingClickHandler);
+
+//Retrieve modal elements, and add click event for closing modal
+    detailDialog = document.getElementById('building-detail');
+    detailContent = detailDialog.querySelector('.modal-content');
+    detailDialog.addEventListener('click', detailModalClickHandler);
+    detailDialog.addEventListener('close', dialogCloseHandler);
+
     recoverData();
 }
 
@@ -109,79 +123,62 @@ function getFormInput(data) {
         createDiv.appendChild(createDivForText);
 
         findSection.appendChild(createDiv);
-    }
 
+        buildingData[building.id] = building;
+    }
+    buildingClickHandler();
 }
 
+function buildingClickHandler(e) {
+    let clickedItem = e.target;
 
+    //Check if we clicked on a button
+    if (clickedItem.nodeName !== 'BUTTON') {
+        return;
+    }
 
+    //Get the information from the global stored data
+    let building = buildingData[clickedItem.dataset.id];
 
+    fetch(`${jsonUrl}?id=${building.id}`)
+        .then( (response) => {
+            if(!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then (getDetails)
+        .catch(ajaxErrorHandler);
+}
 
+function getDetails (building) {
+    console.log(building);
 
+    let detailCard = document.querySelector(`.modal-content`);
+    detailCard.innerHTML = '';
 
+    //Show the name we used on the main grid
+    let title = document.createElement('h1');
+    title.innerHTML = `${building.name}`;
+    detailContent.appendChild(title);
 
+    let text = document.createElement('p');
+    text.innerHTML = `${building.information}`;
+    detailContent.appendChild(text);
 
+    //Open the modal
+    detailDialog.showModal();
+    findSection.classList.add('dialog-open');
+}
 
+function detailModalClickHandler(e)
+{
+    if (e.target.nodeName === 'DIALOG' || e.target.nodeName === 'BUTTON') {
+        detailDialog.close();
+    }
+}
 
-
-
-
-
-
-
-
-
-
-// slope = localStorage.getItem("slope");
-// wheelchairLift = localStorage.getItem("wheelchairLift");
-// buildingLift = localStorage.getItem("buildingLift");
-// disabledBathroom = localStorage.getItem("disabledBathroom");
-// wheelchairAcs = localStorage.getItem("wheelchairAcs");
-// automaticDoors = localStorage.getItem("automaticDoors");
-// manualDoors = localStorage.getItem("manualDoors");
-// sport = localStorage.getItem("sport");
-//
-//
-// let filterTrue = [sport];
-// let goodBuildings;
-// slope = localStorage.getItem("slope");
-// wheelchairLift = localStorage.getItem("wheelchairLift");
-// buildingLift = localStorage.getItem("buildingLift");
-// disabledBathroom = localStorage.getItem("disabledBathroom");
-// wheelchairAcs = localStorage.getItem("wheelchairAcs");
-// automaticDoors = localStorage.getItem("automaticDoors");
-// manualDoors = localStorage.getItem("manualDoors");
-// sport = localStorage.getItem("sport");
-//
-// switch(true) {
-//     case slope:
-//         filterTrue.push(slope);
-//         break;
-//     case wheelchairLift:
-//         filterTrue.push(wheelchairLift);
-//         break;
-//     case buildingLift:
-//         filterTrue.push(buildingLift);
-//         break;
-//     case disabledBathroom:
-//         filterTrue.push(disabledBathroom);
-//         break;
-//     case wheelchairAcs:
-//         filterTrue.push(wheelchairAcs);
-//         break;
-//     case automaticDoors:
-//         filterTrue.push(automaticDoors);
-//         break;
-//     case manualDoors:
-//         filterTrue.push(manualDoors);
-//         break;
-// }
-//
-// goodBuildings = data.filter((item) => {
-//     console.log(item.slope && slope)
-//     if (item.slope && slope === 'true') return true;
-//     })
-//
-//
-// console.log(goodBuildings);
-// uploadData();
+function dialogCloseHandler()
+{
+    findSection.classList.remove('dialog-open');
+}
