@@ -38,14 +38,14 @@ function init()
 
     //Add event listeners for form & removal
     detailContent.addEventListener('click', formSubmitHandler);
-    list.addEventListener('click', todoItemClickHandler);
+    list.addEventListener('click', favoriteItemClickHandler);
 
     //Retrieve current items from local storage & add them to the list
-    let todoItemsString = localStorage.getItem('favoriteItems');
-    if (todoItemsString) { //Or: if (todoItemsString !== null) {
-        favoriteItems = JSON.parse(todoItemsString);
-        for (let todoItem of favoriteItems) {
-            addTodoItem(todoItem);
+    let favoriteItemsString = localStorage.getItem('favoriteItems');
+    if (favoriteItemsString) {
+        favoriteItems = JSON.parse(favoriteItemsString);
+        for (let favoriteItem of favoriteItems) {
+            addFavoriteItem(favoriteItem);
         }
     }
 
@@ -172,7 +172,7 @@ function formSubmitHandler(e)
     console.log(inputValue);
     if (inputValue !== '') {
         //Add to the HTML list & local storage
-        addTodoItem(inputValue);
+        addFavoriteItem(inputValue);
         favoriteItems.push(inputValue);
         localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
 
@@ -188,12 +188,12 @@ function formSubmitHandler(e)
 /**
  * Add a new item to the HTML
  *
- * @param todoText
+ * @param favoriteText
  */
-function addTodoItem(todoText)
+function addFavoriteItem(favoriteText)
 {
     let listItem = document.createElement('li');
-    listItem.innerText = todoText;
+    listItem.innerText = favoriteText;
     list.appendChild(listItem);
 }
 
@@ -202,22 +202,22 @@ function addTodoItem(todoText)
  *
  * @param e
  */
-function todoItemClickHandler(e)
+function favoriteItemClickHandler(e)
 {
-    let todoTarget = e.target;
+    let favoriteTarget = e.target;
 
     //Only continue if we clicked on a list item
-    if (todoTarget.nodeName !== 'LI') {
+    if (favoriteTarget.nodeName !== 'LI') {
         return;
     }
 
     //Remove from local storage
-    let itemIndex = favoriteItems.indexOf(todoTarget.innerText);
+    let itemIndex = favoriteItems.indexOf(favoriteTarget.innerText);
     favoriteItems.splice(itemIndex, 1);
     localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
 
     //Remove from HTML
-    todoTarget.remove();
+    favoriteTarget.remove();
 }
 
 
