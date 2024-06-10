@@ -1,3 +1,4 @@
+// main js
 window.addEventListener('load', init);
 
 let jsonUrl = 'includes/sport-centre-link.php';

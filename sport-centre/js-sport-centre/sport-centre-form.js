@@ -1,3 +1,4 @@
+// form
 window.addEventListener('load', init);
 
 let listString = ["sport", "slope", "wheelchairLift", "buildingLift", "disabledBathroom","wheelchairAcs", "automaticDoors", "manualDoors"];

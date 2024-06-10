@@ -1,3 +1,4 @@
+<!-- Makes JSON -->
 <?php
     require_once "sport-centre-action.php";
 

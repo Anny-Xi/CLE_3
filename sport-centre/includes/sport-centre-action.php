@@ -1,5 +1,5 @@
+<!-- Makeshift JSON -->
 <?php
-
 function getBuilding ()
 {
     return [
